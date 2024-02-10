@@ -1,0 +1,19 @@
+<div class="flow-root">
+  <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+      <li *ngFor="let product of products" class="py-3 sm:py-4">
+          <div class="flex items-center">
+              <div class="flex-shrink-0">
+                  <img class="w-8 h-8 rounded-md" [src]="product.images[0]" [alt]="product.title">
+              </div>
+              <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate">
+                      {{ product.title }}
+                  </p>
+              </div>
+              <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                  $ {{ product.price }}
+              </div>
+          </div>
+      </li>
+  </ul>
+</div>
