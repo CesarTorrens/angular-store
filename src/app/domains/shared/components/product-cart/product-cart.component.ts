@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product.mode'
-import { CommonModule } from '@angular/common';;
+;
 
 @Component({
   selector: 'app-product-cart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './product-cart.component.html',
   styleUrl: './product-cart.component.css'
 })

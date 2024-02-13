@@ -1,5 +1,5 @@
 
-interface Category {
+export interface Category {
   creationAt: string;
   updatedAt: string;
   id: number;

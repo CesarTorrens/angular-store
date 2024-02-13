@@ -1,10 +1,23 @@
-<div class="container mx-auto">
-  <app-header />
-  <div class="grid grid-cols-4 gap-8 mt-6">
-    <app-product
-      *ngFor="let product of products()"
-      (addToCart)="addToCart(product)"
-      [product]="product"
-    />
+<div class="flex space-x-4 py-6">
+  <div class="w-80">
+    <ul>
+      <li>
+        <a [class.underline]="currentCategory() === 'all'" routerLinkActive="underline" class="block hover:underline" routerLink="/" >All</a>
+      </li>
+      @for (category of categories(); track category) {
+        <li>
+          <a [class.underline]="currentCategory() === category.name" routerLinkActive="underline" class="block hover:underline" routerLink="/" [queryParams]="{ category_id: category.id }" > {{ category.name }} </a>
+        </li>
+      }
+    </ul>
   </div>
+  <div class="grid grid-cols-4 gap-8 ">
+    @for (product of products(); track product) {
+      <app-product
+        (addToCart)="addToCart(product)"
+        [product]="product"
+        />
+    }
+  </div>
+
 </div>
